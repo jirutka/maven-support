@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!--//////////////////// ABOUT ////////////////////-->
+
+    <groupId>cz.jirutka.maven</groupId>
+    <artifactId>maven-support</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <name>Maven Support</name>
+    <description>Parent POMs and archetypes for OSS projects.</description>
+    <inceptionYear>2013</inceptionYear>
+
+    <developers>
+        <developer>
+            <name>Jakub Jirutka</name>
+            <email>jakub@jirutka.cz</email>
+            <organization>CTU in Prague</organization>
+            <organizationUrl>http://www.cvut.cz</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+
+    <!--//////////////////// MODULES ////////////////////-->
+
+    <modules>
+        <module>root-parent</module>
+        <module>groovy-lombok-parent</module>
+    </modules>
+
+
+    <!--//////////////////// BUILD ////////////////////-->
+
+    <build>
+        <plugins>
+            <!--
+                Do not deploy this POM to Maven repository, only its modules.
+            -->
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
