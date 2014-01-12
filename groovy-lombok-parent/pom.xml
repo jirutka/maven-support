@@ -38,7 +38,7 @@
     <!--//////////////////// PROPERTIES ////////////////////-->
 
     <properties>
-        <lombok.version>0.11.8</lombok.version>
+        <lombok.version>1.12.2</lombok.version>
     </properties>
 
 
