@@ -12,7 +12,7 @@
     <parent>
         <groupId>cz.jirutka.maven</groupId>
         <artifactId>root-parent</artifactId>
-        <version>1.1</version>
+        <version>1.1.1</version>
         <relativePath>../root-parent/pom.xml</relativePath>
     </parent>
 
@@ -65,12 +65,8 @@
             -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
                     <compilerId>groovy-eclipse-compiler</compilerId>
-                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
                 <dependencies>
                     <dependency>
