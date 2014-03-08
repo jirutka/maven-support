@@ -14,7 +14,7 @@
 
     <groupId>cz.jirutka.maven</groupId>
     <artifactId>root-parent</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <packaging>pom</packaging>
 
     <name>Root Parent</name>
@@ -81,6 +81,8 @@
         <slf4j.version>1.7.5</slf4j.version>
         <java.source.version>1.7</java.source.version>
         <java.target.version>${java.source.version}</java.target.version>
+        <checkstyle.config>cz/jirutka/maven/codequality/checkstyle.xml</checkstyle.config>
+        <checkstyle.skip>false</checkstyle.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -122,6 +124,33 @@
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
+            </plugin>
+
+            <!--
+                Run checkstyle check.
+            -->
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.11</version>
+                <configuration>
+                    <configLocation>${checkstyle.config}</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <skip>${checkstyle.skip}</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>cz.jirutka.maven</groupId>
+                        <artifactId>codequality-resources</artifactId>
+                        <version>1.1.2</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <!--
