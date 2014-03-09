@@ -12,7 +12,7 @@
     <parent>
         <groupId>cz.jirutka.maven</groupId>
         <artifactId>groovy-parent</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
         <relativePath>../groovy-parent/pom.xml</relativePath>
     </parent>
 
@@ -38,7 +38,7 @@
     <!--//////////////////// PROPERTIES ////////////////////-->
 
     <properties>
-        <lombok.version>1.12.2</lombok.version>
+        <lombok.version>1.12.6</lombok.version>
     </properties>
 
 
