@@ -43,6 +43,7 @@
              see http://jira.codehaus.org/browse/GRECLIPSE-1661 -->
         <groovy-compiler.version>2.7.0-01</groovy-compiler.version>
         <groovy-batch.version>2.1.8-01</groovy-batch.version>
+        <spock.version>0.7-groovy-2.0</spock.version>
     </properties>
 
 
@@ -56,6 +57,23 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${spock.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                    </exclusion>
+                </exclusions>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
     <!--//////////////////// BUILD ////////////////////-->
