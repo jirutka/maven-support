@@ -355,11 +355,36 @@
 
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <executions>
+                            <!-- Merge execution data for unit and integration tests. -->
+                            <execution>
+                                <id>merge-exec-data</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>merge</goal>
+                                </goals>
+                                <configuration>
+                                    <fileSets>
+                                        <fileSet>
+                                            <directory>${project.build.directory}</directory>
+                                            <includes>
+                                                <include>*.exec</include>
+                                            </includes>
+                                        </fileSet>
+                                    </fileSets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
                     <!--
                         Plugin for submitting code coverage reports to Coveralls.
 
                         To get it work on Travis, add this line into your .travis.yml:
-                            after_success: 'mvn jacoco:report coveralls:jacoco -P travis-ci'
+                            after_success: 'mvn jacoco:report coveralls:jacoco'
                     -->
                     <plugin>
                         <groupId>org.eluder.coveralls</groupId>
