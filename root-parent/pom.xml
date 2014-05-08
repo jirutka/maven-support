@@ -419,6 +419,7 @@
                         Plugin for submitting code coverage reports to Coveralls.
 
                         To get it work on Travis, add this line into your .travis.yml:
+                            script: 'mvn verify -B'
                             after_success: 'mvn jacoco:report coveralls:jacoco'
                     -->
                     <plugin>

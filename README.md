@@ -18,18 +18,33 @@ It’s preconfigured to deploy artifacts to [Sonatype OSS] / [Maven Central].
 ### Profiles
 
 *  **ci** ... General profile for [CI] to analyze code coverage (uses [JaCoCo]). It should be activated automatically
-   on CI environments.
+   on CI environments (incl. Travis].
 *  **travis-ci** ... Profile for [Travis] to submit code coverage to [Coveralls]. It’s activated automatically on Travis.
 
 ### Usage
 
 Add this to the top of your POM:
 
-    <parent>
-        <groupId>cz.jirutka.maven</groupId>
-        <artifactId>root-parent</artifactId>
-        <version>1.1.5</version>
-    </parent>
+```xml
+<parent>
+    <groupId>cz.jirutka.maven</groupId>
+    <artifactId>root-parent</artifactId>
+    <version>1.1.5</version>
+</parent>
+```
+
+If you want to use Travis with Coveralls, put `.travis.yml` to the root of your repository:
+
+```yml
+language: java
+jdk:
+  - openjdk7
+  - oraclejdk8
+script:
+  - 'mvn verify -B'
+after_success:
+  - 'mvn jacoco:report coveralls:jacoco'
+```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/root-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/root-parent)
 
@@ -50,21 +65,25 @@ Parent for projects that uses Groovy.
 
 Add this to the top of your POM:
 
-    <parent>
-        <groupId>cz.jirutka.maven</groupId>
-        <artifactId>groovy-parent</artifactId>
-        <version>1.1.5</version>
-    </parent>
+```xml
+<parent>
+    <groupId>cz.jirutka.maven</groupId>
+    <artifactId>groovy-parent</artifactId>
+    <version>1.1.5</version>
+</parent>
+```
 
 If you want to use Groovy in production code, not just in tests, then redefine the groovy’s dependency scope:
 
-    <dependencies>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy</artifactId>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
+```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-parent)
 
@@ -83,11 +102,13 @@ Parent for projects that uses Groovy (mainly for tests) and [Lombok] annotation 
 
 Add this to the top of your POM:
 
-    <parent>
-        <groupId>cz.jirutka.maven</groupId>
-        <artifactId>groovy-lombok-parent</artifactId>
-        <version>1.1.5</version>
-    </parent>
+```xml
+<parent>
+    <groupId>cz.jirutka.maven</groupId>
+    <artifactId>groovy-lombok-parent</artifactId>
+    <version>1.1.5</version>
+</parent>
+```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-lombok-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-lombok-parent)
 
