@@ -342,8 +342,8 @@
                 </property>
             </activation>
 
-            <!-- Properties specific for Sonar -->
             <properties>
+                <!-- Properties specific for Sonar -->
                 <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
                 <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
                 <sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>
@@ -359,19 +359,17 @@
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>pre-unit-test</id>
+                                <id>prepare-agent</id>
                                 <goals>
                                     <goal>prepare-agent</goal>
                                 </goals>
                             </execution>
                             <execution>
-                                <id>pre-integration-test</id>
-                                <phase>pre-integration-test</phase>
+                                <id>prepare-agent-integration</id>
                                 <goals>
-                                    <goal>prepare-agent</goal>
+                                    <goal>prepare-agent-integration</goal>
                                 </goals>
                                 <configuration>
-                                    <destFile>${sonar.jacoco.itReportPath}</destFile>
                                     <propertyName>build.failsafe.argLine</propertyName>
                                 </configuration>
                             </execution>
