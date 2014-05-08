@@ -152,7 +152,6 @@
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <configuration>
-                    <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
                     <includes>
                         <include>**/*IT.*</include>
                     </includes>
@@ -368,27 +367,6 @@
                                 <id>prepare-agent-integration</id>
                                 <goals>
                                     <goal>prepare-agent-integration</goal>
-                                </goals>
-                                <configuration>
-                                    <propertyName>build.failsafe.argLine</propertyName>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <!--
-                        Redefine failsafe-plugin to run with JaCoCo.
-                    -->
-                    <plugin>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <configuration>
-                            <argLine>-Dfile.encoding=${project.build.sourceEncoding} ${build.failsafe.argLine}</argLine>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                    <goal>verify</goal>
                                 </goals>
                             </execution>
                         </executions>
