@@ -82,6 +82,8 @@
         <java.version>1.7</java.version>
         <checkstyle.config>cz/jirutka/maven/codequality/checkstyle.xml</checkstyle.config>
         <checkstyle.skip>false</checkstyle.skip>
+        <duplicate-finder.failOnConflict>true</duplicate-finder.failOnConflict>
+        <duplicate-finder.skip>false</duplicate-finder.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -102,6 +104,30 @@
 
     <build>
         <plugins>
+            <!--
+                Check the classpath for duplicate classes and resources.
+            -->
+            <plugin>
+                <groupId>com.ning.maven.plugins</groupId>
+                <artifactId>maven-duplicate-finder-plugin</artifactId>
+                <configuration>
+                    <skip>${duplicate-finder.skip}</skip>
+                    <failBuildInCaseOfDifferentContentConflict>${duplicate-finder.failOnConflict}</failBuildInCaseOfDifferentContentConflict>
+                    <ignoredResources>
+                        <ignoredResource>(META-INF/)?CHANGELOG.*</ignoredResource>
+                        <ignoredResource>^[A-Z0-9_-]*\.TXT</ignoredResource>
+                    </ignoredResources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!--
                 Create a build number based on SCM revision.
 
@@ -354,6 +380,12 @@
                             </manifestEntries>
                         </archive>
                     </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.ning.maven.plugins</groupId>
+                    <artifactId>maven-duplicate-finder-plugin</artifactId>
+                    <version>1.0.7</version>
                 </plugin>
 
                 <plugin>

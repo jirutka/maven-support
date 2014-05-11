@@ -4,9 +4,10 @@ Maven Parents
 root-parent
 -----------
 
-This is the root parent with basic plugins and profiles. It automatically checks Java code with [checkstyle] \(rules
-are defined in [checkstyle.xml]), runs integration tests, collects metrics for code coverage analysis (when **ci**
-profile enabled), deploys sources and JavaDocs in deploy phase etc.
+This is the root parent with basic plugins and profiles. It automatically checks classpath for duplicate classes with
+[duplicate-finder], checks Java code with [checkstyle] \(rules are defined in [checkstyle.xml]), runs integration tests,
+collects metrics for code coverage analysis (when **ci** profile enabled), deploys sources and JavaDocs in deploy phase
+etc.
 
 It’s preconfigured to deploy artifacts to [Sonatype OSS] / [Maven Central].
 
