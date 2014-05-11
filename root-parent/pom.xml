@@ -80,8 +80,7 @@
     <properties>
         <slf4j.version>1.7.7</slf4j.version>
         <java.version>1.7</java.version>
-        <checkstyle.config>cz/jirutka/maven/codequality/checkstyle.xml</checkstyle.config>
-        <checkstyle.skip>false</checkstyle.skip>
+        <checkstyle.config.location>cz/jirutka/maven/codequality/checkstyle.xml</checkstyle.config.location>
         <duplicate-finder.failOnConflict>true</duplicate-finder.failOnConflict>
         <duplicate-finder.skip>false</duplicate-finder.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -173,9 +172,7 @@
             <plugin>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <configuration>
-                    <configLocation>${checkstyle.config}</configLocation>
                     <consoleOutput>true</consoleOutput>
-                    <skip>${checkstyle.skip}</skip>
                 </configuration>
                 <executions>
                     <execution>
