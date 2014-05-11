@@ -115,6 +115,12 @@
             <property name="maxLineLength" value="120" />
         </module>
 
+        <!-- Checks for braces around code blocks.
+             Omit LITERAL_IF to allow inline if statements, for example: if (true) doSomething(); -->
+        <module name="NeedBraces">
+            <property name="tokens" value="LITERAL_DO, LITERAL_ELSE, LITERAL_FOR, LITERAL_WHILE" />
+        </module>
+
         <!-- Checks that right curly braces ('}') are on the same line as the next statement. -->
         <module name="RightCurly">
             <property name="shouldStartLine" value="false" />
