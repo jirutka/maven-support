@@ -173,6 +173,8 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <configuration>
                     <consoleOutput>true</consoleOutput>
+                    <sourceDirectory>${project.basedir}</sourceDirectory>
+                    <includes>/src/**/*.java,/src/**/*.groovy,/src/**/*.xml,/src/**/*.properties,/pom.xml</includes>
                 </configuration>
                 <executions>
                     <execution>

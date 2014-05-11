@@ -41,7 +41,9 @@
     </module>
 
     <!-- Checks that there are no tab characters in the source code. -->
-    <module name="FileTabCharacter" />
+    <module name="FileTabCharacter">
+        <property name="fileExtensions" value="java, groovy, xml" />
+    </module>
 
     <!-- Checks whether files end with a new line. -->
     <module name="NewlineAtEndOfFile">
@@ -60,6 +62,7 @@
         <property name="minimum" value="0" />
         <property name="maximum" value="0" />
         <property name="message" value="Line has trailing spaces." />
+        <property name="fileExtensions" value="java, groovy, xml" />
     </module>
 
     <!-- Ensures the correct translation of code by checking property files for consistency regarding their keys. -->
