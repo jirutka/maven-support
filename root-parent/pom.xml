@@ -14,7 +14,7 @@
 
     <groupId>cz.jirutka.maven</groupId>
     <artifactId>root-parent</artifactId>
-    <version>1.1.6-SNAPSHOT</version>
+    <version>1.1.6</version>
     <packaging>pom</packaging>
 
     <name>Root Parent</name>
@@ -187,7 +187,7 @@
                     <dependency>
                         <groupId>cz.jirutka.maven</groupId>
                         <artifactId>codequality-resources</artifactId>
-                        <version>1.1.6-SNAPSHOT</version>
+                        <version>1.1.6</version>
                     </dependency>
                 </dependencies>
             </plugin>
