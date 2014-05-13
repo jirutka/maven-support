@@ -113,7 +113,8 @@
                     <skip>${duplicate-finder.skip}</skip>
                     <failBuildInCaseOfDifferentContentConflict>${duplicate-finder.failOnConflict}</failBuildInCaseOfDifferentContentConflict>
                     <ignoredResources>
-                        <ignoredResource>(META-INF/)?CHANGELOG.*</ignoredResource>
+                        <ignoredResource>META-INF/.*</ignoredResource>
+                        <ignoredResource>/CHANGELOG.*</ignoredResource>
                         <ignoredResource>^[A-Z0-9_-]*\.TXT</ignoredResource>
                     </ignoredResources>
                 </configuration>
