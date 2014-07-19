@@ -38,11 +38,9 @@
     <!--//////////////////// PROPERTIES ////////////////////-->
 
     <properties>
-        <groovy.version>2.2.2</groovy.version>
-        <!-- groovy-eclipse-compiler 2.8.0-01 doesn't work with Lombok,
-             see http://jira.codehaus.org/browse/GRECLIPSE-1661 -->
-        <groovy-compiler.version>2.7.0-01</groovy-compiler.version>
-        <groovy-batch.version>2.1.8-01</groovy-batch.version>
+        <groovy.version>2.3.4</groovy.version>
+        <groovy-compiler.version>2.9.0-01</groovy-compiler.version>
+        <groovy-batch.version>2.3.4-01</groovy-batch.version>
         <spock.version>0.7-groovy-2.0</spock.version>
     </properties>
 
