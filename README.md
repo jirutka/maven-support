@@ -30,7 +30,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.jirutka.maven</groupId>
     <artifactId>root-parent</artifactId>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
 </parent>
 ```
 
@@ -70,7 +70,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.jirutka.maven</groupId>
     <artifactId>groovy-parent</artifactId>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
 </parent>
 ```
 
@@ -107,7 +107,7 @@ Add this to the top of your POM:
 <parent>
     <groupId>cz.jirutka.maven</groupId>
     <artifactId>groovy-lombok-parent</artifactId>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
 </parent>
 ```
 
