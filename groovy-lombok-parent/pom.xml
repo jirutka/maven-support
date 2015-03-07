@@ -38,7 +38,7 @@
     <!--//////////////////// PROPERTIES ////////////////////-->
 
     <properties>
-        <lombok.version>1.12.6</lombok.version>
+        <lombok.version>1.16.2</lombok.version>
     </properties>
 
 
@@ -66,7 +66,7 @@
                 <configuration >
                     <fork>true</fork>
                     <compilerArguments>
-                        <javaAgentClass>lombok.core.Agent</javaAgentClass>
+                        <javaAgentClass>lombok.launch.Agent</javaAgentClass>
                     </compilerArguments>
                 </configuration>
                 <dependencies>
