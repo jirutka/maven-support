@@ -14,7 +14,7 @@ It’s preconfigured to deploy artifacts to [Sonatype OSS] / [Maven Central].
 ### Properties
 
 *  **java.version** ... Version of JDK to compile sources for (default is 1.7).
-*  **slf4j.version** ... Version of [slf4j-api] to use (default is 1.7.7).
+*  **slf4j.version** ... Version of [slf4j-api] to use (default is 1.7.10).
 
 ### Profiles
 
