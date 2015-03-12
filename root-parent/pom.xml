@@ -110,6 +110,7 @@
                 <groupId>com.ning.maven.plugins</groupId>
                 <artifactId>maven-duplicate-finder-plugin</artifactId>
                 <configuration>
+                    <checkTestClasspath>false</checkTestClasspath>
                     <skip>${duplicate-finder.skip}</skip>
                     <failBuildInCaseOfDifferentContentConflict>${duplicate-finder.failOnConflict}</failBuildInCaseOfDifferentContentConflict>
                     <ignoredResources>
