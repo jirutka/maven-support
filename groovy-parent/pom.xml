@@ -23,7 +23,7 @@
     <packaging>pom</packaging>
 
     <name>Groovy Parent</name>
-    <description>Parent POM for OSS projects that uses Groovy (mainly for tests).</description>
+    <description>Parent POM for OSS projects that uses Groovy.</description>
     <url>http://github.com/jirutka/maven-support</url>
     <inceptionYear>2013</inceptionYear>
 

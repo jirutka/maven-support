@@ -75,14 +75,14 @@ Add this to the top of your POM:
 </parent>
 ```
 
-If you want to use Groovy in production code, not just in tests, then redefine the groovy’s dependency scope:
+If you want to use Groovy just in tests, not a production code, then redefine the groovy’s dependency scope:
 
 ```xml
 <dependencies>
     <dependency>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy</artifactId>
-        <scope>compile</scope>
+        <scope>test</scope>
     </dependency>
 </dependencies>
 ```
