@@ -38,7 +38,7 @@
     <!--//////////////////// PROPERTIES ////////////////////-->
 
     <properties>
-        <groovy.version>2.3.9</groovy.version>
+        <groovy.version>2.3.10</groovy.version>
         <groovy-batch.version>2.3.7-01</groovy-batch.version>
         <groovy-compiler.version>2.9.1-01</groovy-compiler.version>
         <spock.version>1.0-groovy-2.3</spock.version>
