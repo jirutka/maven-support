@@ -14,7 +14,7 @@
 
     <groupId>cz.jirutka.maven</groupId>
     <artifactId>root-parent</artifactId>
-    <version>1.1.8</version>
+    <version>1.1.9</version>
     <packaging>pom</packaging>
 
     <name>Root Parent</name>
@@ -189,7 +189,7 @@
                     <dependency>
                         <groupId>cz.jirutka.maven</groupId>
                         <artifactId>codequality-resources</artifactId>
-                        <version>1.1.8</version>
+                        <version>1.1.9</version>
                     </dependency>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>

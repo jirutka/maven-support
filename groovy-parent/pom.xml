@@ -12,7 +12,7 @@
     <parent>
         <groupId>cz.jirutka.maven</groupId>
         <artifactId>root-parent</artifactId>
-        <version>1.1.8</version>
+        <version>1.1.9</version>
         <relativePath>../root-parent/pom.xml</relativePath>
     </parent>
 
