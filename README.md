@@ -132,7 +132,7 @@ This project is licensed under [MIT license](http://opensource.org/licenses/MIT)
 [Sonatype OSS]: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
 [Travis]: https://travis-ci.org/
 
-[checkstyle.xml]: /codequality-resources/src/main/resources/cz/cvut/fit/maven/codequality/checkstyle.xml
+[checkstyle.xml]: /codequality-resources/src/main/resources/cz/jirutka/maven/codequality/checkstyle.xml
 
 [groovy]: http://search.maven.org/#search|gav|1|g%3A%22org.codehaus.groovy%22%20AND%20a%3A%22groovy%22
 [groovy-eclipse-batch]: http://search.maven.org/#search|gav|1|g%3A%22org.codehaus.groovy%22%20AND%20a%3A%22groovy-eclipse-batch%22
