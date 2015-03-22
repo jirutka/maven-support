@@ -102,6 +102,17 @@
     <!--//////////////////// BUILD ////////////////////-->
 
     <build>
+        <testResources>
+            <!-- Default test resources. -->
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+            <!-- Resources for separated integration tests. -->
+            <testResource>
+                <directory>src/it/resources</directory>
+            </testResource>
+        </testResources>
+
         <plugins>
             <!--
                 Check the classpath for duplicate classes and resources.
