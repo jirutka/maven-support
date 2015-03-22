@@ -45,7 +45,6 @@
         <module>codequality-resources</module>
         <module>root-parent</module>
         <module>groovy-parent</module>
-        <module>groovy-lombok-parent</module>
     </modules>
 
 
