@@ -12,7 +12,7 @@
     <parent>
         <groupId>cz.jirutka.maven</groupId>
         <artifactId>groovy-parent</artifactId>
-        <version>1.1.9</version>
+        <version>1.1.10</version>
         <relativePath>../groovy-parent/pom.xml</relativePath>
     </parent>
 
