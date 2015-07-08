@@ -63,15 +63,15 @@
 
     <distributionManagement>
         <repository>
-            <id>sonatype-staging</id>
-            <name>Sonatype repository for staging releases for Maven Central</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>bintray-maven</id>
+            <name>Bintray repository for releases going to JCenter / Maven Central</name>
+            <url>https://api.bintray.com/maven/jirutka/maven/${project.artifactId}</url>
         </repository>
 
         <snapshotRepository>
-            <id>sonatype-snapshots</id>
-            <name>Sonatype repository for deploying snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>jfrog-oss-snapshot-local</id>
+            <name>JFrog OSS repository for deploying snapshots</name>
+            <url>https://oss.jfrog.org/oss-snapshot-local</url>
         </snapshotRepository>
     </distributionManagement>
 

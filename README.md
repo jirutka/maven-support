@@ -9,12 +9,14 @@ This is the root parent with basic plugins and profiles. It automatically checks
 collects metrics for code coverage analysis (when **ci** profile enabled), deploys sources and JavaDocs in deploy phase
 etc.
 
-It’s preconfigured to deploy artifacts to [Sonatype OSS] / [Maven Central].
+It’s preconfigured to deploy released artifacts to [Bintray] (a [gateway][[bintray-maven-central] to the Maven Central) and snapshots to [oss.jfrog.org](https://oss.jfrog.org) (read [here][jfrog-oss]).
 
 ### Properties
 
 *  **java.version** ... Version of JDK to compile sources for (default is 1.7).
 *  **slf4j.version** ... Version of [slf4j-api] to use (default is 1.7.12).
+*  **bintray.repo** ... A target repository in Bintray for releases, in the format of `{username}/{repository}` (default is jirutka/maven).
+*  **bintray.package** ... A target package name under the Bintray repository (default is `${project.artifactId}`).
 
 ### Profiles
 
@@ -129,8 +131,10 @@ This project is licensed under [MIT license](http://opensource.org/licenses/MIT)
 [JaCoCo]: http://www.eclemma.org/jacoco/
 [Maven Central]: http://search.maven.org/
 [Lombok]: http://projectlombok.org/
-[Sonatype OSS]: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
+[Bintray]: https://bintray.com/
 [Travis]: https://travis-ci.org/
+[bintray-maven-central]: http://blog.bintray.com/2014/02/11/bintray-as-pain-free-gateway-to-maven-central
+[jfrog-oss]: http://www.jfrog.com/confluence/pages/viewpage.action?pageId=26083425
 
 [checkstyle.xml]: /codequality-resources/src/main/resources/cz/jirutka/maven/codequality/checkstyle.xml
 

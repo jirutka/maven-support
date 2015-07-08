@@ -48,23 +48,23 @@
 
     <distributionManagement>
         <repository>
-            <id>sonatype-staging</id>
-            <name>Sonatype repository for staging releases for Maven Central</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>bintray-maven</id>
+            <name>Bintray repository for releases going to JCenter / Maven Central</name>
+            <url>https://api.bintray.com/maven/${bintray.repo}/${bintray.package}</url>
         </repository>
 
         <snapshotRepository>
-            <id>sonatype-snapshots</id>
-            <name>Sonatype repository for deploying snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>jfrog-oss-snapshot-local</id>
+            <name>JFrog OSS repository for deploying snapshots</name>
+            <url>https://oss.jfrog.org/oss-snapshot-local</url>
         </snapshotRepository>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>jfrog-libs-snapshot</id>
+            <name>JFrog OSS snapshots</name>
+            <url>https://oss.jfrog.org/libs-snapshot</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -80,6 +80,10 @@
     <properties>
         <slf4j.version>1.7.12</slf4j.version>
         <java.version>1.7</java.version>
+
+        <bintray.repo>jirutka/maven</bintray.repo>
+        <bintray.package>${project.artifactId}</bintray.package>
+
         <checkstyle.config.location>cz/jirutka/maven/codequality/checkstyle.xml</checkstyle.config.location>
         <duplicate-finder.failOnConflict>true</duplicate-finder.failOnConflict>
         <duplicate-finder.skip>false</duplicate-finder.skip>
