@@ -1,0 +1,141 @@
+= Maven Parents
+:version: 1.1.10
+:mvn-search-uri: https://search.maven.org/#search|gav|1|
+:mvn-badge-base-uri: https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven
+:veye-badge-base-uri: https://www.versioneye.com/user/projects
+
+== root-parent
+
+image:{mvn-badge-base-uri}/root-parent/badge.svg[Maven Central, link="{mvn-badge-base-uri}/root-parent"]
+image:{veye-badge-base-uri}/5621208736d0ab00160009fb/badge.svg[Dependency Status, link="{veye-badge-base-uri}/5621208736d0ab00160009fb"]
+
+This is the root parent with basic plugins and profiles.
+It automatically checks classpath for duplicate classes with https://github.com/ning/maven-duplicate-finder-plugin[duplicate-finder], checks Java code with http://checkstyle.sourceforge.net/[checkstyle] (rules are defined in link:/codequality-resources/src/main/resources/cz/jirutka/maven/codequality/checkstyle.xml[checkstyle.xml]), runs integration tests, collects metrics for code coverage analysis (when _ci_ profile enabled), deploys sources and JavaDocs in deploy phase etc.
+
+It’s preconfigured to deploy released artifacts to https://bintray.com[Bintray] / https://bintray.com/bintray/jcenter[jCenter] (a http://blog.bintray.com/2014/02/11/bintray-as-pain-free-gateway-to-maven-central[pain-free gateway to Maven Central]) and snapshots to https://oss.jfrog.org[oss.jfrog.org].
+
+=== Properties
+
+java.version::
+  Version of JDK to compile sources for (default is 1.7).
+slf4j.version::
+  Version of {mvn-search-uri}g%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22[slf4j-api] to use (default is 1.7.12).
+bintray.repo::
+  A target repository in Bintray for releases, in the format of `{username}/{repository}` (default is jirutka/maven).
+bintray.package::
+  A target package name under the Bintray repository (default is `${project.artifactId}`).
+
+=== Profiles
+
+ci::
+  General profile for CI to analyze code coverage (uses http://www.eclemma.org/jacoco[JaCoCo]).
+  It is automatically on CI environments (incl. Travis).
+travis-ci::
+  Profile for https://travis-ci.org[Travis CI] to submit code coverage to https://coveralls.io[Coveralls].
+  It’s activated automatically on Travis.
+
+=== Usage
+
+Add this to the top of your POM:
+
+[source, xml, subs="verbatim, attributes"]
+----
+<parent>
+    <groupId>cz.jirutka.maven</groupId>
+    <artifactId>root-parent</artifactId>
+    <version>{version}</version>
+</parent>
+----
+
+If you want to use Travis with Coveralls, put `.travis.yml` to the root of your repository:
+
+[source, yaml]
+----
+language: java
+sudo: false
+jdk:
+  - openjdk7
+  - oraclejdk8
+script:
+  - 'mvn verify -B'
+after_success:
+  - 'mvn jacoco:report coveralls:jacoco'
+----
+
+
+== groovy-parent
+
+image:{mvn-badge-base-uri}/groovy-parent/badge.svg[Maven Central, link="{mvn-badge-base-uri}/groovy-parent"]
+image:{veye-badge-base-uri}/5621208d36d0ab00190008e6/badge.svg[Dependency Status, link="{veye-badge-base-uri}/5621208d36d0ab00190008e6"]
+
+_inherits from root-parent_
+
+Parent for projects that uses Groovy.
+
+=== Properties
+
+groovy.version::
+  Version of {mvn-search-uri}g%3A%22org.codehaus.groovy%22%20AND%20a%3A%22groovy%22[groovy] to use.
+groovy-compiler.version::
+  Version of {mvn-search-uri}g%3A%22org.codehaus.groovy%22%20AND%20a%3A%22groovy-eclipse-compiler%22[groovy-eclipse-compiler] to use.
+groovy-batch.version::
+  Version of {mvn-search-uri}g%3A%22org.codehaus.groovy%22%20AND%20a%3A%22groovy-eclipse-batch%22[groovy-eclipse-batch] to use.
+
+=== Usage
+
+Add this to the top of your POM:
+
+[source, xml, subs="verbatim, attributes"]
+----
+<parent>
+    <groupId>cz.jirutka.maven</groupId>
+    <artifactId>groovy-parent</artifactId>
+    <version>{version}</version>
+</parent>
+----
+
+If you want to use Groovy just in tests, not a production code, then redefine the groovy’s dependency scope:
+
+[source, xml]
+----
+<dependencies>
+    <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy</artifactId>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+----
+
+
+== groovy-lombok-parent
+
+image:{mvn-badge-base-uri}/groovy-lombok-parent/badge.svg[Maven Central, link="{mvn-badge-base-uri}/groovy-lombok-parent"]
+image:{veye-badge-base-uri}/5621209136d0ab00210009f6/badge.svg[Dependency Status, link="{veye-badge-base-uri}/5621209136d0ab00210009f6"]
+
+_inherits from groovy-parent_
+
+Parent for projects that uses Groovy (mainly for tests) and [Lombok] annotation processor.
+
+=== Properties
+
+lombok.version::
+  Version of {mvn-search-uri}g%3A%22org.projectlombok%22%20AND%20a%3A%lombok%22[lombok] to use.
+
+=== Usage
+
+Add this to the top of your POM:
+
+[source, xml, subs="verbatim, attributes"]
+----
+<parent>
+    <groupId>cz.jirutka.maven</groupId>
+    <artifactId>groovy-lombok-parent</artifactId>
+    <version>{version}</version>
+</parent>
+----
+
+
+== License
+
+This project is licensed under http://opensource.org/licenses/MIT[MIT license].
