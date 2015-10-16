@@ -51,6 +51,7 @@ after_success:
 ```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/root-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/root-parent)
+[![Dependency Status](https://www.versioneye.com/user/projects/5621208736d0ab00160009fb/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5621208736d0ab00160009fb)
 
 
 groovy-parent
@@ -90,6 +91,7 @@ If you want to use Groovy just in tests, not a production code, then redefine th
 ```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-parent)
+[![Dependency Status](https://www.versioneye.com/user/projects/5621208d36d0ab00190008e6/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5621208d36d0ab00190008e6)
 
 
 groovy-lombok-parent
@@ -115,6 +117,7 @@ Add this to the top of your POM:
 ```
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-lombok-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven/groovy-lombok-parent)
+[![Dependency Status](https://www.versioneye.com/user/projects/5621209136d0ab00210009f6/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5621209136d0ab00210009f6)
 
 
 License
