@@ -19,7 +19,7 @@ It’s preconfigured to deploy released artifacts to https://bintray.com[Bintray
 java.version::
   Version of JDK to compile sources for (default is 1.7).
 slf4j.version::
-  Version of {mvn-search-uri}g%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22[slf4j-api] to use (default is 1.7.12).
+  Version of {mvn-search-uri}g%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22[slf4j-api] to use.
 bintray.repo::
   A target repository in Bintray for releases, in the format of `{username}/{repository}` (default is jirutka/maven).
 bintray.package::
