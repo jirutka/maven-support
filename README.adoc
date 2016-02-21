@@ -1,5 +1,5 @@
 = Maven Parents
-:version: 1.2.0
+:version: 1.3.0
 :mvn-search-uri: https://search.maven.org/#search|gav|1|
 :mvn-badge-base-uri: https://maven-badges.herokuapp.com/maven-central/cz.jirutka.maven
 :veye-badge-base-uri: https://www.versioneye.com/user/projects
