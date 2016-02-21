@@ -87,6 +87,7 @@
         <checkstyle.config.location>cz/jirutka/maven/codequality/checkstyle.xml</checkstyle.config.location>
         <duplicate-finder.failOnConflict>true</duplicate-finder.failOnConflict>
         <duplicate-finder.skip>false</duplicate-finder.skip>
+        <javadoc.opts></javadoc.opts>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -247,7 +248,7 @@
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
+                    <additionalparam>${javadoc.opts}</additionalparam>
                     <failOnError>false</failOnError>
                 </configuration>
                 <executions>
@@ -534,6 +535,21 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+
+        <!--
+            Profile for disabling doclint on JDK 8+.
+        -->
+        <profile>
+            <id>java8-doclint-disable</id>
+
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+
+            <properties>
+                <javadoc.opts>-Xdoclint:none</javadoc.opts>
+            </properties>
         </profile>
     </profiles>
 
